@@ -26,6 +26,7 @@ public class MonthlyHelperApplication extends Application{
 		loader.setControllerFactory(context::getBean);
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getClassLoader().getResource("style.css").toExternalForm());
 		stage.setScene(scene);
 		stage.show();
 		stage.setResizable(false);

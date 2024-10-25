@@ -71,6 +71,7 @@ public class Startpage {
         Parent addSubscription = loader.load();
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         Scene addSubscriptionScene = new Scene(addSubscription);
+        addSubscriptionScene.getStylesheets().add(getClass().getClassLoader().getResource("style.css").toExternalForm());
         stage.setScene(addSubscriptionScene);
         stage.show();
     }
@@ -90,6 +91,7 @@ public class Startpage {
         loader.setControllerFactory(MonthlyHelperApplication.context::getBean);
         Parent root = loader.load();
         Scene start = new Scene(root);
+        start.getStylesheets().add(getClass().getClassLoader().getResource("style.css").toExternalForm());
         stage.setScene(start);
     }
 

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.backend.monthlyHelper.Controller.RemoveSubscription">
+            fx:controller="com.backend.monthlyHelper.Controller.RemoveSubscription" styleClass="anchorpane">
 
 
     <ListView fx:id="listview" layoutX="200.0" layoutY="62.0" prefHeight="264.0" prefWidth="200.0"/>

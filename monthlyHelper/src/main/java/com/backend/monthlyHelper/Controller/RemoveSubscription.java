@@ -88,6 +88,7 @@ public class RemoveSubscription {
         loader.setControllerFactory(MonthlyHelperApplication.context:: getBean);
         Parent root = loader.load();
         Scene startScene = new Scene(root);
+        startScene.getStylesheets().add(getClass().getClassLoader().getResource("style.css").toExternalForm());
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.setScene(startScene);
     }

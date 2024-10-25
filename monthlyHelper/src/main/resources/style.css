@@ -1,0 +1,57 @@
+.button{
+    -fx-background-radius: 10px;
+    -fx-background-color: #52687d;
+    -fx-font-size: 14;
+    -fx-text-fill: #E8E9ED;
+    -fx-border-color: #52687d;
+    -fx-border-radius: 10px;
+
+}
+.anchorpane{
+    -fx-background-color: #E8E9ED;
+}
+
+.list-view {
+    -fx-background-radius: 10px;
+    -fx-border-color: #52687d;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2;
+}
+
+.list-cell{
+    -fx-background-radius: 10px;
+    -fx-text-fill: #52687d;
+}
+
+.list-view .list-cell:selected{
+    -fx-background-radius: 10px;
+    -fx-background-color: CFCCBD;
+    -fx-text-fill: #52687d;
+}
+
+.input{
+    -fx-background-radius: 10px;
+    -fx-border-color: #52687d;
+    -fx-border-radius: 10px;
+}
+
+.input:focused{
+    -fx-background-radius: 10px;
+    -fx-focus-color: #52687d;
+    -fx-border-radius: 10px;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button{
+    -fx-min-width: 0; /* Setzt die minimale Breite auf 0 */
+    -fx-min-height: 0; /* Setzt die minimale Höhe auf 0 */
+    -fx-pref-width: 0; /* Setzt die bevorzugte Breite auf 0 */
+    -fx-pref-height: 0; /* Setzt die bevorzugte Höhe auf 0 */
+    -fx-background-color: transparent; /* Macht den Hintergrund transparent */
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 0; /* Setzt die bevorzugte Breite auf 0 */
+    -fx-background-color: transparent; /* Macht den Hintergrund transparent */
+    -fx-opacity: 0; /* Setzt die Opazität auf 0 */
+}

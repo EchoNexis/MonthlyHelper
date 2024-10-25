@@ -15,12 +15,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Log
 @Component
 public class AddSubscription {
 
     private final SubscriptionService subscriptionService;
+
+    @FXML
+    public Label labelAddSubscriptionService;
 
     @Autowired
     public AddSubscription(SubscriptionService subscriptionService){
@@ -54,10 +58,10 @@ public class AddSubscription {
     @FXML
     private void initialize(){
         if (subscriptionService.getItemToEdit()!=null){
-            inputService.setText(subscriptionService.getItemToEdit().getService());
-            float amount = subscriptionService.getItemToEdit().getAmount();
-            int a = (int) (amount * 100);
-            inputAmount.setText(String.valueOf(a));
+            SubscriptionEntity item = subscriptionService.getItemToEdit();
+            inputService.setText(item.getService());
+            int amount = (int) (item.getAmount() * 100);
+            inputAmount.setText(String.valueOf(amount));
             LocalDate date = LocalDate.now();
             inputCollectionDate.setValue(date);
         }
@@ -72,9 +76,10 @@ public class AddSubscription {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("startpage.fxml"));
         loader.setControllerFactory(MonthlyHelperApplication.context::getBean);
         Parent startFXML = loader.load();
-        Scene startScene = new Scene(startFXML);
+        Scene scene = new Scene(startFXML);
+        scene.getStylesheets().add(getClass().getClassLoader().getResource("style.css").toExternalForm());
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-        stage.setScene(startScene);
+        stage.setScene(scene);
         subscriptionService.setItemToEdit(null);
     }
 

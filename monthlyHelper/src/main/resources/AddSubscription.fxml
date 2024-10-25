@@ -6,13 +6,43 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backend.monthlyHelper.Controller.AddSubscription">
-   <Button fx:id="btnBackToStart" layoutX="221.0" layoutY="175.0" mnemonicParsing="false" onAction="#goBackToStart" text="back" />
-   <Button fx:id="btnAddSubscription" layoutX="275.0" layoutY="175.0" mnemonicParsing="false" onAction="#addSubscription" text="add subscription" />
-   <TextField fx:id="inputService" layoutX="226.0" layoutY="76.0" />
-   <TextField fx:id="inputAmount" layoutX="226.0" layoutY="138.0" />
-   <Label fx:id="labelService" layoutX="184.0" layoutY="80.0" text="service" />
-   <Label fx:id="labelCollectionDate" layoutX="143.0" layoutY="112.0" text="collection date" />
-   <Label fx:id="labelAmount" layoutX="154.0" layoutY="142.0" prefHeight="17.0" prefWidth="72.0" text="amount in ct" />
-   <DatePicker fx:id="inputCollectionDate" layoutX="226.0" layoutY="108.0" prefHeight="25.0" prefWidth="149.0" />
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="anchorpane" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backend.monthlyHelper.Controller.AddSubscription">
+   <VBox alignment="CENTER" spacing="20">
+      <HBox alignment="CENTER" prefWidth="600" spacing="20">
+         <Label fx:id="labelAddSubscriptionService"  text="Add Subscription Service" >
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
+      </HBox>
+      <HBox alignment="CENTER" spacing="10">
+         <VBox prefWidth="600" spacing="5">
+            <HBox alignment="CENTER" spacing="5">
+               <HBox alignment="CENTER_RIGHT" prefWidth="80">
+                  <Label fx:id="labelService" layoutX="184.0" layoutY="80.0" text="service"/>
+               </HBox>
+               <TextField fx:id="inputService" layoutX="226.0" layoutY="76.0" stylesheets="@style.css" styleClass="input"/>
+            </HBox>
+            <HBox alignment="CENTER" spacing="5">
+               <HBox alignment="CENTER_RIGHT" prefWidth="80">
+                  <Label fx:id="labelCollectionDate" layoutX="143.0" layoutY="112.0" text="collection date" />
+               </HBox>
+               <DatePicker fx:id="inputCollectionDate" layoutX="226.0" layoutY="108.0" prefHeight="25.0" prefWidth="149.0"/>
+            </HBox>
+            <HBox alignment="CENTER" spacing="5">
+               <HBox alignment="CENTER_RIGHT" prefWidth="80">
+                  <Label fx:id="labelAmount" layoutX="154.0" layoutY="142.0" prefHeight="17.0" prefWidth="72.0" text="amount in ct" />
+               </HBox>
+               <TextField fx:id="inputAmount" layoutX="226.0" layoutY="138.0" styleClass="input" />
+            </HBox>
+         </VBox>
+      </HBox>
+      <HBox alignment="CENTER" spacing="20">
+         <Button fx:id="btnBackToStart" layoutX="221.0" layoutY="175.0" mnemonicParsing="false" onAction="#goBackToStart" text="back" />
+         <Button fx:id="btnAddSubscription" layoutX="275.0" layoutY="175.0" mnemonicParsing="false" onAction="#addSubscription" text="add subscription" />
+      </HBox>
+   </VBox>
 </AnchorPane>
